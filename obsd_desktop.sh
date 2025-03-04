@@ -14,8 +14,8 @@ echo "permit nopass $user as root cmd wsconsctl" > /etc/doas.conf
 pkg_add firefox ratpoison ffmpeg
 
 #Enable touchpad settings and my desktop env when my xorg session starts
-echo "wsconsctl mouse.reverse_scrolling=1" > /home/$user/.xsession
-echo "wsconsctl mouse.tp.tapping=1" >> /home/$user/.xsession
+echo "doas wsconsctl mouse.reverse_scrolling=1" > /home/$user/.xsession
+echo "doas wsconsctl mouse.tp.tapping=1" >> /home/$user/.xsession
 echo "/usr/local/bin/ratpoison" >> /home/$user/.xsession
 
 #Enable login manager on boot
